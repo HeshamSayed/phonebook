@@ -1,0 +1,33 @@
+{% extends "base_generic.html" %}
+
+{% block content %}
+  <div class="container mt-5">
+    <h2>Add Contact</h2>
+    <form method="post">
+      {% csrf_token %}
+
+      <div class="form-group">
+        {{ form.firstname.label_tag }} {{ form.firstname }}
+      </div>
+
+      <div class="form-group">
+        {{ form.lastname.label_tag }} {{ form.lastname }}
+      </div>
+
+      <div class="form-group">
+        {{ form.email.label_tag }} {{ form.email }}
+      </div>
+
+      <h3>Phone Numbers</h3>
+      {{ formset.management_form }}
+
+      {% for phone_form in formset %}
+        <div class="phone-form form-group">
+          {{ phone_form.mobile_phone.label_tag }} {{ phone_form.mobile_phone }}
+        </div>
+      {% endfor %}
+
+      <button type="submit" class="btn btn-primary">Submit</button>
+    </form>
+  </div>
+{% endblock %}

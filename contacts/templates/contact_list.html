@@ -1,0 +1,30 @@
+{% extends "base_generic.html" %}
+
+{% block content %}
+<div class="container mt-5">
+  <div class="row justify-content-center">
+    <div class="col-lg-8">
+      <div class="card">
+        <div class="card-header bg-primary text-white">Contacts</div>
+        <ul class="list-group list-group-flush">
+          {% for contact in contacts %}
+            <li class="list-group-item">
+              <div class="row">
+                <div class="col-md-2 font-weight-bold">{{ contact.firstname }}</div>
+                {% for phone_number in contact.phonenumber_set.all %}
+                  <div class="col-md-3">{{ phone_number.mobile_phone }}</div>
+                {% endfor %}
+                <div class="col-md-3">
+                  <a href="{% url 'contact_detail' contact.pk %}" class="btn btn-primary">View Details</a>
+                </div>
+              </div>
+            </li>
+          {% empty %}
+            <li class="list-group-item">No contacts yet.</li>
+          {% endfor %}
+        </ul>
+      </div> <!-- end card -->
+    </div> <!-- end col-lg-8 -->
+  </div> <!-- end row -->
+</div> <!-- end container -->
+{% endblock %}
