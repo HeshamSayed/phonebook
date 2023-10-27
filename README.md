@@ -19,7 +19,7 @@ You have a basic understanding of Docker and Django.
 
 
 # Using Phonebook Django Application
-    $ git clone https://github.com/your-repo-link/phonebook.gitz
+    $ git clone https://github.com/HeshamSayed/phonebook.git
 
 
 # Navigate to the project root directory:
