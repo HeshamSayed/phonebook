@@ -1,0 +1,7 @@
+# PostgreSQL
+# ------------------------------------------------------------------------------
+POSTGRES_HOST=postgres
+POSTGRES_PORT=5432
+POSTGRES_DB=phonebook
+POSTGRES_USER=BIIshmUQioRoEgtpdbXPlpRnjRulLnoQ
+POSTGRES_PASSWORD=nlD8GoxvWwgti9wDmOcPrS2fxgUynXvfQdzpV5IIhsLR9uFh7a4AFziOZQxZ83ql
