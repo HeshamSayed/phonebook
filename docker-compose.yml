@@ -1,0 +1,15 @@
+version: '3.3'
+services:
+  phonebook:
+    restart: always
+    container_name: phonebook
+    build:
+      context: .
+      dockerfile: ./Dockerfile
+    command: "/bin/bash /phonebook/start.sh"
+    volumes:
+      - ./:/phonebook:rw
+    env_file:
+      - .env
+    ports:
+      - "8000:8000"
