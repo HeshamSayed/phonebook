@@ -8,7 +8,8 @@ ENV PYTHONDONTWRITEBYTECODE 1
 ENV PYTHONUNBUFFERED 1
 RUN pip install --upgrade pip
 COPY ./requirements/base.txt $PHONE_BOOK/base.txt
-COPY ./requirements/production.txt $PHONE_BOOK/requirements.txt
+#COPY ./requirements/production.txt $PHONE_BOOK/requirements.txt
+COPY ./requirements/local.txt $PHONE_BOOK/requirements.txt
 COPY ./start.sh $PHONE_BOOK/start.sh
 RUN pip install -r requirements.txt
 RUN apt update -y
