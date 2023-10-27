@@ -4,18 +4,22 @@
 <div class="container mt-5">
   <div class="row justify-content-center">
     <div class="col-lg-8">
-      <div class="card">
-        <div class="card-header bg-primary text-white">{{ contact.firstname }} {{ contact.lastname }}</div>
-        <div class="card-body">
-          <h5 class="card-title">Contact Details</h5>
-          <p class="card-text">
-            <strong>Email:</strong> {{ contact.email }}<br>
-            {% for phone_number in contact.phonenumber_set.all %}
-              <strong>Phone:</strong> {{ phone_number.mobile_phone }}<br>
-            {% endfor %}
-          </p>
-        </div>
-      </div> <!-- end card -->
+      {% if user.is_authenticated %}
+        <div class="card">
+          <div class="card-header bg-primary text-white">{{ contact.firstname }} {{ contact.lastname }}</div>
+          <div class="card-body">
+            <h5 class="card-title">Contact Details</h5>
+            <p class="card-text">
+              <strong>Email:</strong> {{ contact.email }}<br>
+              {% for phone_number in contact.phonenumber_set.all %}
+                <strong>Phone:</strong> {{ phone_number.mobile_phone }}<br>
+              {% endfor %}
+            </p>
+          </div>
+        </div> <!-- end card -->
+      {% else %}
+        <p>You need to be logged in to view contact details.</p>
+      {% endif %}
     </div> <!-- end col-lg-8 -->
   </div> <!-- end row -->
 </div> <!-- end container -->
