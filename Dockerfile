@@ -1,5 +1,5 @@
 FROM python:3.10.4
-ENV $PHONE_BOOK=/phonebook
+ENV PHONE_BOOK=/phonebook
 RUN mkdir -p $PHONE_BOOK
 RUN mkdir -p $PHONE_BOOK/static
 RUN mkdir -p $PHONE_BOOK/logs
